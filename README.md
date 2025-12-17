@@ -1,6 +1,6 @@
 # Supporting Data — The-Good-the-Bad-and-the-Ugly-of-Atomistic-Learning-for-Clusters-to-Bulk-Generalization
 
-This repository contains supporting datasets and training scripts used in the study "The Good, the Bad, and the Ugly of Atomistic Learning for Clusters-to-Bulk Generalization". It provides dataset partitions, example input files, pre-trained heads, and a collection of training scripts (with and without gradient information) for experiments on cluster-to-bulk transfer learning.
+This repository contains supporting datasets and training scripts used in the study "The Good, the Bad, and the Ugly of Atomistic Learning for Clusters-to-Bulk Generalization".
 
 ## Repository Layout
 
