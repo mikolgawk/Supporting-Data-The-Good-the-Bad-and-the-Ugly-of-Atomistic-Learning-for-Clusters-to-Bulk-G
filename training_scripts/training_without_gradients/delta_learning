@@ -1,0 +1,28 @@
+mace_run_train \
+    --name="ice_MACE_model" \
+    --train_file="training_file.xyz" \
+    --enable_cueq=True \
+    --r_max=6.0 \
+    --valid_file="validation_file.xyz" \
+    --energy_weight="$energy_weight" \
+    --forces_weight=0 \
+    --E0s="{"1":-12.412976535265937, "8":-2041.8522316415601}" \
+    --energy_key='REF_energy_delta' \
+    --forces_key='REF_forces_delta' \
+    --lr=0.001 \
+    --scaling="rms_forces_scaling" \
+    --batch_size=1 \
+    --valid_batch_size=1 \
+    --max_num_epochs=1000 \
+    --swa \
+    --start_swa=500 \
+    --swa_forces_weight=0 \
+    --swa_energy_weight="$energy_weight" \
+    --swa_stress_weight=0 \
+    --swa_lr=0.001 \
+    --ema \
+    --ema_decay=0.99 \
+    --amsgrad \
+    --device=cuda \
+    --default_dtype="float64" \
+    --seed=3 > "output.log" 2>&1

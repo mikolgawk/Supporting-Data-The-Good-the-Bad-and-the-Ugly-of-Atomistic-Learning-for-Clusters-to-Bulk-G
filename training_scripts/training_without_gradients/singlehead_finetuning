@@ -1,0 +1,30 @@
+mace_run_train \
+    --name="ice_MACE_model" \
+    --train_file="training_file.xyz" \
+    --r_max=6.0 \
+    --enable_cueq=True \
+    --foundation_model="/home/ucapgaw/Scratch/phd_MACEfinetuning_project_hypatia/mace_agnesi_medium.model" \
+    --multiheads_finetuning=False \
+    --valid_file="validation_file.xyz" \
+    --energy_weight="$energy_weight" \
+    --forces_weight=0 \
+    --E0s="{"1": -13.571964772646918, "8": -2043.933693071156}" \
+    --energy_key='REF_energy_OFF23(M)' \
+    --forces_key='REF_forces_OFF23(M)' \
+    --lr=0.001 \
+    --scaling="rms_forces_scaling" \
+    --batch_size=1 \
+    --valid_batch_size=1 \
+    --max_num_epochs=300 \
+    --swa \
+    --start_swa=150 \
+    --swa_forces_weight=0 \
+    --swa_energy_weight="$energy_weight" \
+    --swa_stress_weight=0 \
+    --swa_lr=0.001 \
+    --ema \
+    --ema_decay=0.99 \
+    --amsgrad \
+    --default_dtype="float64" \
+    --device=cuda \
+    --seed=3 > "output.log" 2>&1
